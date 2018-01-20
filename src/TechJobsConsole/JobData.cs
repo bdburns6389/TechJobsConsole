@@ -57,7 +57,15 @@ namespace TechJobsConsole
 
             return jobs;
         }
+        /*public static string[] FindByValue()
+        {
+            //Needs to be worked on.
 
+            //Load Data to be searched by user input value.
+            LoadData();
+
+        }*/
+        
         /*
          * Load and parse data from job_data.csv
          */

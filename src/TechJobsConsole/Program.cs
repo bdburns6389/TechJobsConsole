@@ -118,18 +118,27 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            foreach (var job in someJobs)
+            //Needs to handle if there are no results.
+            if (someJobs.Count >= 1)
             {
-                Console.WriteLine("*****");
-
-                foreach (var kvp in job)
+                foreach (var job in someJobs)
                 {
-                    Console.WriteLine("{0}: {1}", kvp.Key, kvp.Value);
-                }
-                Console.WriteLine("*****");
+                    Console.WriteLine("*****");
 
+                    foreach (var kvp in job)
+                    {
+                        Console.WriteLine("{0}: {1}", kvp.Key, kvp.Value);
+                    }
+                    Console.WriteLine("*****");
+
+                }
             }
-            //Make for loop that prints out each 
+            else
+            {
+                Console.WriteLine("No Jobs to Report Back.");
+            }
         }
+            //Make for loop that prints out each.
     }
 }
+
