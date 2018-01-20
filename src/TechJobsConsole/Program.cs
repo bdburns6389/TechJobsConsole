@@ -121,8 +121,13 @@ namespace TechJobsConsole
             foreach (var job in someJobs)
             {
                 Console.WriteLine("*****");
-                Console.WriteLine("Key: {0} Value: {1}", job.Keys, job.Values);
+
+                foreach (var kvp in job)
+                {
+                    Console.WriteLine("{0}: {1}", kvp.Key, kvp.Value);
+                }
                 Console.WriteLine("*****");
+
             }
             //Make for loop that prints out each 
         }
