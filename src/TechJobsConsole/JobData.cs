@@ -52,19 +52,40 @@ namespace TechJobsConsole
                 if (aValue.Contains(value))
                 {
                     jobs.Add(row);
+
                 }
             }
 
             return jobs;
         }
-        /*public static string[] FindByValue()
+        
+        public static List<Dictionary<string, string>> FindByValue(string searchTerm)
         {
-            //Needs to be worked on.
 
             //Load Data to be searched by user input value.
             LoadData();
+            //Creates new dictionary to add jobs with selected keywords in them.
+            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+            //Iterate through all key-value pairs in all jobs-dictionaries to search for searchTerm.
+            foreach (var dictionary in AllJobs)
+            {
+              foreach (var kvp in dictionary)
+                {
+                    //Turn both value and searchTerm lowercase so search does not rely on case-sensitivity
+                    if (kvp.Value.ToLower().Contains(searchTerm.ToLower()))
+                    {
+                        jobs.Add(dictionary);
+                        //Break allows only one entry per job to be added to dictionary.
+                        break;
+                    }
+                     
+                }
+            }
 
-        }*/
+            return jobs;
+
+
+        }
         
         /*
          * Load and parse data from job_data.csv
